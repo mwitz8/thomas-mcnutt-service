@@ -4,7 +4,7 @@ import Rating from '@material-ui/lab/Rating';
 import FiberManualRecordIcon from '@material-ui/icons/FiberManualRecord';
 import Grid from '@material-ui/core/Grid';
 import {
-  StyledDoc, StyledRoot, StyledWhatTravellers, RatingBubbles, ReviewStayRight,
+  RatingBubbles, ReviewStayRight,
 } from '../componentStyles';
 import Reviews from './Reviews';
 import Map from './Map';
@@ -29,7 +29,7 @@ class App extends React.Component {
   }
 
   getLocation() {
-    Axios.get('http://localhost:3000/api/location')
+    Axios.get('http://localhost:3003/api/location')
     // Axios.get('/api/restaurant')
       .then((result) => {
         const { data } = result;
@@ -41,7 +41,7 @@ class App extends React.Component {
   }
 
   getRestaurants() {
-    Axios.get('http://localhost:3000/api/restaurant')
+    Axios.get('http://localhost:3003/api/restaurant')
     // Axios.get('/api/restaurant')
       .then((result) => {
         const { data } = result;
@@ -53,7 +53,7 @@ class App extends React.Component {
   }
 
   getAttractions() {
-    Axios.get('http://localhost:3000/api/attraction')
+    Axios.get('http://localhost:3003/api/attraction')
     // Axios.get('/api/attraction')
       .then((result) => {
         this.setState({
@@ -74,18 +74,26 @@ class App extends React.Component {
       location, restaurants, mainAttraction, attractions,
     } = this.state;
     return (
-      <StyledRoot>
-        <StyledDoc>
+      <Grid style={{
+        backgroundColor: 'white',
+        fontFamily: 'poppins',
+      }}
+      >
+        <Grid style={{
+          padding: '200px',
+          backgroundColor: '#f2f2f2',
+        }}
+        >
           { location
             && (
               <div>
-                <div className="reviews">
+                <div>
                   <Grid container spacing={0}>
-                    <StyledWhatTravellers item xs={3}>
+                    <Grid style={{ fontSize: '2rem' }} item xs={3}>
                       What travelers are saying about
                       {' '}
                       {location.Name}
-                    </StyledWhatTravellers>
+                    </Grid>
                     <RatingBubbles item xs={1}>
                       <h1 style={{ float: 'right', top: '-50' }}>
                         {location.ratings.avg}
@@ -130,8 +138,8 @@ class App extends React.Component {
             />
           </div>
           ) }
-        </StyledDoc>
-      </StyledRoot>
+        </Grid>
+      </Grid>
     );
   }
 }

@@ -27,7 +27,7 @@ const StyledMainImg = styled(Avatar)({
 });
 
 const StyledDoc = styled(Grid)({
-  padding: '200px',
+  padding: '50px',
   'background-color': '#f2f2f2',
 });
 const StyledRoot = styled(Grid)({
