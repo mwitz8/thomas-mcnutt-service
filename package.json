@@ -14,9 +14,11 @@
     "test": "jest --verbose",
     "test:coverage": "npx jest --coverage --runInBand --detectOpenHandles --verbose",
     "test:watch": "jest --verbose --watch --runInBand --detectOpenHandles",
-    "start": "npx nodemon Server/start.js",
+    "start": "node Database/seed.js && node Server/start.js",
     "build": "npx webpack --config webpack.config.js --watch",
+    "buildProduction": "npx webpack --config webpack.prod.js",
     "hot": "webpack serve --open",
+    "startProduction": "node Server/start.js",
     "watch": "webpack -d -w",
     "seed": "node Database/seed.js",
     "lint": "eslint . --ignore-path ./.eslintignore --fix"

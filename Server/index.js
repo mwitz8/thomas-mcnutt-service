@@ -14,7 +14,8 @@ app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.use(express.static(`${__dirname}/../client/dist`));
+app.use(express.static(`${__dirname}/../Client/dist`));
+// app.use(express.static('public'))
 
 // LOCATION API
 app.get('/api/location', (req, res) => {

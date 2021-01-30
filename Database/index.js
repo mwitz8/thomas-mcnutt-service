@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const mongoURI = 'mongodb://localhost/maps';
+const mongoURI = 'mongodb://database:27017/maps';
 
 module.exports = {
   db: () => {
