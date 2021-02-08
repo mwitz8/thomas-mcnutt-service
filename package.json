@@ -19,7 +19,8 @@
     "hot": "webpack serve --open",
     "watch": "webpack -d -w",
     "seed": "node Database/seed.js",
-    "lint": "eslint . --ignore-path ./.eslintignore --fix"
+    "lint": "eslint . --ignore-path ./.eslintignore --fix",
+    "generateData": "node Database/createData.js"
   },
   "repository": {
     "type": "git",
