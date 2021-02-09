@@ -1,10 +1,10 @@
 const faker = require('faker');
 const fs = require('fs');
 
-const attractionsFile = fs.createWriteStream('./data/attractions.csv');
-const locationsFile = fs.createWriteStream('./data/locations.csv');
-const locationReviewsFile = fs.createWriteStream('./data/locationReviews.csv');
-const restaurantsFile = fs.createWriteStream('./data/restaurants.csv');
+const attractionsFile = fs.createWriteStream('./Database/data/attractions.csv');
+const locationsFile = fs.createWriteStream('./Database/data/locations.csv');
+const locationReviewsFile = fs.createWriteStream('./Database/data/locationReviews.csv');
+const restaurantsFile = fs.createWriteStream('./Database/data/restaurants.csv');
 
 const randomizer = (num) => Math.floor(Math.random() * num);
 
