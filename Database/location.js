@@ -71,6 +71,7 @@ module.exports = {
         //   } else {
         //     var reviewsData = result2.rows;
         //     data.reviews = [reviewsData[0].review, reviewsData[1].review, reviewsData[2].review];
+        console.log(data);
             res.status(200).send(data);
           // }
         }//)
