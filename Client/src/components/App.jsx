@@ -24,7 +24,7 @@ class App extends React.Component {
 
   componentDidMount() {
     this.getLocation();
-    //this.getRestaurants();
+    this.getRestaurants();
     this.getAttractions();
   }
 
