@@ -4,7 +4,7 @@ const client = new Pool({
   user: 'postgres',
   host: '18.188.122.192',
   database: 'postgres',
-  port: 5432
+  port: 5432,
 });
 
 client.connect(() => {
