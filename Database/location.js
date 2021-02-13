@@ -51,7 +51,6 @@ module.exports = {
         res.status(400).send(err);
       } else {
         var data = result.rows[0];
-        data.Name = faker.address.city();
         data.ratings = {
           avg: data.averageRating,
           total: data.totalRatings,

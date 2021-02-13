@@ -16,7 +16,7 @@ DELIMITER '|';
 
 CREATE TABLE IF NOT EXISTS locations (
   "id" SERIAL PRIMARY KEY,
-  -- "Name" character varying(250) NOT NULL,
+  "Name" character varying(250) NOT NULL,
   "latitude" float NOT NULL,
   "longitude" float NOT NULL,
   "averageRating" float NOT NULL,
