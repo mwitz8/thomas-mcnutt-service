@@ -16,7 +16,7 @@ var generateAttraction = function() {
 var locationId = 0;
 var generateLocation = function() {
   locationId++;
-  return `${locationId}|${faker.address.city()}|${Math.floor(Math.random() * Math.floor(180)) - 90}|${Math.floor(Math.random() * Math.floor(260)) - 180}|${randomizer(5)}|${randomizer(1000)}|${faker.address.streetName()}|${faker.address.city()}|${faker.address.country()}|${faker.address.zipCode()}|${`www.${faker.internet.domainName()}.gov`}|${faker.phone.phoneNumber()}|${faker.internet.email()}\n`;
+  return `${locationId}|${faker.address.city()}|${faker.address.city()}|${Math.floor(Math.random() * Math.floor(180)) - 90}|${Math.floor(Math.random() * Math.floor(260)) - 180}|${randomizer(5)}|${randomizer(1000)}|${faker.address.streetName()}|${faker.address.city()}|${faker.address.country()}|${faker.address.zipCode()}|${`www.${faker.internet.domainName()}.gov`}|${faker.phone.phoneNumber()}|${faker.internet.email()}\n`;
 }
 var locationReviewId = 0;
 var generateLocationReview = function() {

@@ -120,7 +120,7 @@ class App extends React.Component {
                 </div>
               </div>
             ) }
-          {location && restaurants && mainAttraction && attractions && (
+          {location && (
           <div className="information-panel">
             <NearbyInfo
               location={location}

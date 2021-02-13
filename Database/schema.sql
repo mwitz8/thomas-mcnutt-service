@@ -30,7 +30,7 @@ CREATE TABLE IF NOT EXISTS locations (
   "email" character varying(250) NOT NULL
 );
 CREATE UNIQUE INDEX locations_pkey ON locations(id int4_ops);
-COPY locations("id", "latitude", "longitude", "averageRating", "totalRatings", "street", "city", "country", "zip", "website", "phoneNumber", "email")
+COPY locations("id", "Name", "latitude", "longitude", "averageRating", "totalRatings", "street", "city", "country", "zip", "website", "phoneNumber", "email")
 FROM 'C:\Users\Public\SDC\data\locations.csv'
 DELIMITER '|';
 
