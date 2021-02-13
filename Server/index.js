@@ -17,6 +17,7 @@ app.use(express.static(`${__dirname}/../client/dist`));
 
 // LOCATION API
 app.get('/api/location', (req, res) => {
+  console.log('got get request');
   Locations.find(req, res);
 });
 app.post('/api/location', (req, res) => {
