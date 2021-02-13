@@ -38,7 +38,7 @@ const Location = ({ location }) => (
   </div>
 );
 
-Location.propTypes = {
+/*Location.propTypes = {
   location: PropTypes.shape({
     //Name: PropTypes.string,
     address: PropTypes.shape({
@@ -60,6 +60,6 @@ Location.propTypes = {
     phoneNum: PropTypes.string,
     email: PropTypes.string,
   }).isRequired,
-};
+};*/
 
 export default Location;
