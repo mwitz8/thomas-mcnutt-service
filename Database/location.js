@@ -58,10 +58,20 @@ module.exports = {
           lat: data.latitude,
           long: data.longitude
         }
+        data.address = {
+          street: data.street,
+          city: data.city,
+          country: data.country,
+          zip: data.zip
+        }
         delete data.averageRating;
         delete data.totalRatings;
         delete data.latitude;
         delete data.longitude;
+        delete data.street;
+        delete data.city;
+        delete data.country;
+        delete data.zip;
         // client.query(`
         // SELECT *
         // FROM locationReviews

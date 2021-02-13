@@ -41,20 +41,18 @@ module.exports = {
         res.status(400).send(err);
       } else {
         var data = result.rows;
-        data.ratings = {
-          avg: data.averageRating,
-          total: data.totalRatings,
-        };
-        delete data.averageRating;
-        delete data.totalRatings;
+        for (let i = 0; i < data.length; i++) {
+          data[i].ratings = {
+            avg: data[i].averageRating,
+            total: data[i].totalRatings,
+          };
+          data[i].distanceFrom = data[i].distanceFrom.toString();
+          delete data[i].averageRating;
+          delete data[i].totalRatings;
+        }
         res.status(200).send(data);
       }
     });
-    /*
-    attraction.find({}, (err, result) => {
-      if (err) { res.status(400).send(err); } else res.status(200).send(result);
-    });
-    */
   },
 
   create: (req, res) => {

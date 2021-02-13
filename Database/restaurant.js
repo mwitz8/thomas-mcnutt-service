@@ -36,13 +36,24 @@ module.exports = {
       FROM restaurants
       LIMIT 3
     `, (err, result) => {
-      if (err) { res.status(400).send(err); } else res.status(200).send(result.rows);
+      if (err) {
+        res.status(400).send(err);
+      } else {
+        data = result.rows;
+        for (let i = 0; i < data.length; i++) {
+          //entry = data[i]
+          data[i].ratings = {
+            avg: data[i].averageRating,
+            total: data[i].totalRatings
+          }
+          data[i].distanceFrom = data[i].distanceFrom.toString();
+          delete data[i].averageRating;
+          delete data[i].totalRatings;
+        }
+        console.log('sending restaurants:' + data);
+        res.status(200).send(data);
+      }
     });
-    /*
-    restaurant.find({}, (err, result) => {
-      if (err) { res.status(400).send(err); } else res.status(200).send(result);
-    });
-    */
   },
 
   create: (req, res) => {

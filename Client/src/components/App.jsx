@@ -35,7 +35,7 @@ class App extends React.Component {
         const { data } = result;
         this.setState({
           location: data,
-        }, () => {console.log('data: ', data)});
+        });
       })
       .catch((err) => { console.log(err); });
   }
@@ -63,8 +63,8 @@ class App extends React.Component {
       .then(() => {
         const { attractions } = this.state;
         this.setState({
-          mainAttraction: attractions[3],
-        });
+          mainAttraction: attractions[2],
+        }, () => {console.log('state', this.state);});
       })
       .catch((err) => { console.log(err); });
   }
@@ -120,7 +120,7 @@ class App extends React.Component {
                 </div>
               </div>
             ) }
-          {location && (
+          {location && restaurants && mainAttraction && attractions && (
           <div className="information-panel">
             <NearbyInfo
               location={location}
