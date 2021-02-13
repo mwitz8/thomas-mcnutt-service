@@ -5,6 +5,7 @@ const client = new Pool({
   host: '18.222.40.18',
   database: 'SDC',
   port: 5432,
+  password: 'mwitz8'
 });
 
 client.connect(() => {
