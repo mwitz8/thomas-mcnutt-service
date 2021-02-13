@@ -70,7 +70,7 @@ module.exports = {
         //     res.status(400).send(err);
         //   } else {
         //     var reviewsData = result2.rows;
-             data.reviews = [reviewsData[0].review, reviewsData[1].review, reviewsData[2].review];
+            //  data.reviews = [reviewsData[0].review, reviewsData[1].review, reviewsData[2].review];
         console.log(data);
             res.status(200).send(data);
           // }
