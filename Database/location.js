@@ -84,9 +84,9 @@ module.exports = {
             var reviewsData = result2.rows;
             data.reviews = [reviewsData[0].review, reviewsData[1].review, reviewsData[2].review];
             res.status(200).send(data);
-          // }
-        }//)
-      //}
+          }
+        })
+      }
     });
     /*
     location.findOne({}, (err, result) => {
