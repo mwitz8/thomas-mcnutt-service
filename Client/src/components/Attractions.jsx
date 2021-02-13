@@ -34,19 +34,19 @@ const Attractions = ({ attractions }) => (
   </div>
 );
 
-Attractions.propTypes = {
-  attractions: PropTypes.arrayOf(PropTypes.shape({
-    description: PropTypes.string,
-    imageUrl: PropTypes.string,
-    name: PropTypes.string,
-    price: PropTypes.number,
-    ratings: PropTypes.shape({
-      avg: PropTypes.number,
-      total: PropTypes.number,
-    }),
-    distanceFrom: PropTypes.string,
-    basicDescription: PropTypes.string,
-  })).isRequired,
-};
+// Attractions.propTypes = {
+//   attractions: PropTypes.arrayOf(PropTypes.shape({
+//     description: PropTypes.string,
+//     imageUrl: PropTypes.string,
+//     name: PropTypes.string,
+//     price: PropTypes.number,
+//     ratings: PropTypes.shape({
+//       avg: PropTypes.number,
+//       total: PropTypes.number,
+//     }),
+//     distanceFrom: PropTypes.string,
+//     basicDescription: PropTypes.string,
+//   })).isRequired,
+// };
 
 export default Attractions;

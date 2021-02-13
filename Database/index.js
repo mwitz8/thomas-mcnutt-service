@@ -1,3 +1,20 @@
+const { Pool } = require('pg');
+
+const client = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'postgres',
+  port: 5432,
+  password: 'mwitz8'
+});
+
+client.connect(() => {
+  console.log('connected to database');
+});
+
+module.exports = client;
+
+/*
 const mongoose = require('mongoose');
 
 const mongoURI = 'mongodb://localhost/maps';
@@ -16,3 +33,4 @@ module.exports = {
       .catch((err) => console.log('error disconnecting from mongoDB', err));
   },
 };
+*/

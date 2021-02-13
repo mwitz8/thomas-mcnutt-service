@@ -32,18 +32,18 @@ const Restaurants = ({ restaurants }) => (
   </div>
 );
 
-Restaurants.propTypes = {
-  restaurants: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    ratings: PropTypes.shape({
-      avg: PropTypes.number,
-      total: PropTypes.number,
-    }),
-    imageUrl: PropTypes.string,
-    distanceFrom: PropTypes.string,
-    foodType: PropTypes.string,
-    price: PropTypes.number,
-  })).isRequired,
-};
+// Restaurants.propTypes = {
+//   restaurants: PropTypes.arrayOf(PropTypes.shape({
+//     name: PropTypes.string,
+//     ratings: PropTypes.shape({
+//       avg: PropTypes.number,
+//       total: PropTypes.number,
+//     }),
+//     imageUrl: PropTypes.string,
+//     distanceFrom: PropTypes.string,
+//     foodType: PropTypes.string,
+//     price: PropTypes.number,
+//   })).isRequired,
+// };
 
 export default Restaurants;

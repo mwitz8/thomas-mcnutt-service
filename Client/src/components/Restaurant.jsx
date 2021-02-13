@@ -44,17 +44,17 @@ const Restaurant = ({ restaurant }) => (
   </Grid>
 );
 
-Restaurant.propTypes = {
-  restaurant: PropTypes.shape({
-    name: PropTypes.string,
-    ratings: PropTypes.shape({
-      avg: PropTypes.number,
-      total: PropTypes.number,
-    }),
-    imageUrl: PropTypes.string,
-    distanceFrom: PropTypes.string,
-    foodType: PropTypes.string,
-    price: PropTypes.number,
-  }).isRequired,
-};
+// Restaurant.propTypes = {
+//   restaurant: PropTypes.shape({
+//     name: PropTypes.string,
+//     ratings: PropTypes.shape({
+//       avg: PropTypes.number,
+//       total: PropTypes.number,
+//     }),
+//     imageUrl: PropTypes.string,
+//     distanceFrom: PropTypes.string,
+//     foodType: PropTypes.string,
+//     price: PropTypes.number,
+//   }).isRequired,
+// };
 export default Restaurant;

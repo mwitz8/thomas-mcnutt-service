@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const { db } = require('./index.js');
+const client = require('./index.js');
+/*const { db } = require('./index.js');
 
-db();
+db();*/
 
 mongoose.Promise = global.Promise;
 
@@ -30,9 +31,18 @@ module.exports = {
   Restaurants: restaurant,
 
   find: (req, res) => {
+    client.query(`
+      SELECT *
+      FROM restaurants
+      LIMIT 3
+    `, (err, result) => {
+      if (err) { res.status(400).send(err); } else res.status(200).send(result.rows);
+    });
+    /*
     restaurant.find({}, (err, result) => {
       if (err) { res.status(400).send(err); } else res.status(200).send(result);
     });
+    */
   },
 
   create: (req, res) => {

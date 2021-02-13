@@ -21,8 +21,8 @@ const Reviews = ({ reviews }) => (
   </div>
 );
 
-Reviews.propTypes = {
-  reviews: PropTypes.arrayOf(PropTypes.string).isRequired,
-};
+// Reviews.propTypes = {
+//   reviews: PropTypes.arrayOf(PropTypes.string).isRequired,
+// };
 
 export default Reviews;

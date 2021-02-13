@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const { db } = require('./index.js');
+const client = require('./index.js');
+// const { db } = require('./index.js');
 
-db();
+// db();
 
 mongoose.Promise = global.Promise;
 
@@ -40,9 +41,46 @@ module.exports = {
   Locations: location,
 
   find: (req, res) => {
+    client.query(`
+      SELECT *
+      FROM locations
+      WHERE id = 1
+    `, (err, result) => {
+      if (err) {
+        res.status(400).send(err);
+      } else {
+        var data = result.rows[0];
+        data.ratings = {
+          avg: data.averageRating,
+          total: data.totalRatings,
+        };
+        data.coords = {
+          lat: data.latitude,
+          long: data.longitude
+        }
+        delete data.averageRating;
+        delete data.totalRatings;
+        delete data.latitude;
+        delete data.longitude;
+        client.query(`
+        SELECT *
+        FROM locationReviews
+        LIMIT 3`, (err, result2) => {
+          if (err) {
+            res.status(400).send(err);
+          } else {
+            var reviewsData = result2.rows;
+            data.reviews = [reviewsData[0].review, reviewsData[1].review, reviewsData[2].review];
+            res.status(200).send(data);
+          }
+        })
+      }
+    });
+    /*
     location.findOne({}, (err, result) => {
       if (err) { res.status(400).send(err); } else res.status(200).send(result);
     });
+    */
   },
 
   create: (req, res) => {

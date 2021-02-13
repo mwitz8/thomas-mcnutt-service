@@ -8,8 +8,8 @@ const Review = ({ review }) => (
   </Grid>
 );
 
-Review.propTypes = {
-  review: PropTypes.string.isRequired,
-};
+// Review.propTypes = {
+//   review: PropTypes.string.isRequired,
+// };
 
 export default Review;

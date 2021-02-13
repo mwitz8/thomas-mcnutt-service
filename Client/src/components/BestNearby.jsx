@@ -24,31 +24,31 @@ const BestNearby = ({ restaurants, attractions }) => (
   </div>
 );
 
-BestNearby.propTypes = {
-  restaurants: PropTypes.arrayOf(PropTypes.shape({
-    name: PropTypes.string,
-    ratings: PropTypes.shape({
-      avg: PropTypes.number,
-      total: PropTypes.number,
-    }),
-    imageUrl: PropTypes.string,
-    distanceFrom: PropTypes.string,
-    foodType: PropTypes.string,
-    Price: PropTypes.number,
-  })).isRequired,
-  attractions: PropTypes.arrayOf(PropTypes.shape({
-    description: PropTypes.string,
-    imageUrl: PropTypes.string,
-    name: PropTypes.string,
-    price: PropTypes.number,
-    ratings: PropTypes.shape({
-      avg: PropTypes.number,
-      total: PropTypes.number,
-    }),
-    distanceFrom: PropTypes.string,
-    basicDescription: PropTypes.string,
-  })).isRequired,
+// BestNearby.propTypes = {
+//   restaurants: PropTypes.arrayOf(PropTypes.shape({
+//     name: PropTypes.string,
+//     ratings: PropTypes.shape({
+//       avg: PropTypes.number,
+//       total: PropTypes.number,
+//     }),
+//     imageUrl: PropTypes.string,
+//     distanceFrom: PropTypes.string,
+//     foodType: PropTypes.string,
+//     Price: PropTypes.number,
+//   })).isRequired,
+//   attractions: PropTypes.arrayOf(PropTypes.shape({
+//     description: PropTypes.string,
+//     imageUrl: PropTypes.string,
+//     name: PropTypes.string,
+//     price: PropTypes.number,
+//     ratings: PropTypes.shape({
+//       avg: PropTypes.number,
+//       total: PropTypes.number,
+//     }),
+//     distanceFrom: PropTypes.string,
+//     basicDescription: PropTypes.string,
+//   })).isRequired,
 
-};
+// };
 
 export default BestNearby;

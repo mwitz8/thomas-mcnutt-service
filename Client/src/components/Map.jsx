@@ -7,18 +7,18 @@ import PropTypes from 'prop-types';
 const Map = ({ coords }) => (
   <div className="google-map">
     <GoogleMap
-      // bootstrapURLKeys={{ key: Key }}
+      bootstrapURLKeys={{ key: 'AIzaSyBZTAMsSBZh9fXFq3W5P46aTscmGmuZldA' }}
       center={[coords.lat, coords.long]}
       zoom={9}
     />
   </div>
 );
 
-Map.propTypes = {
-  coords: PropTypes.shape({
-    lat: PropTypes.number,
-    long: PropTypes.number,
-  }).isRequired,
-};
+// Map.propTypes = {
+//   coords: PropTypes.shape({
+//     lat: PropTypes.number,
+//     long: PropTypes.number,
+//   }).isRequired,
+// };
 
 export default Map;

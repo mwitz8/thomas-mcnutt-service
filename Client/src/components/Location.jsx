@@ -38,28 +38,28 @@ const Location = ({ location }) => (
   </div>
 );
 
-Location.propTypes = {
-  location: PropTypes.shape({
-    Name: PropTypes.string,
-    address: PropTypes.shape({
-      city: PropTypes.string,
-      country: PropTypes.string,
-      street: PropTypes.string,
-      zip: PropTypes.string,
-    }),
-    coords: PropTypes.shape({
-      lat: PropTypes.number,
-      long: PropTypes.number,
-    }),
-    ratings: PropTypes.shape({
-      avg: PropTypes.number,
-      total: PropTypes.number,
-    }),
-    reviews: PropTypes.arrayOf(PropTypes.string),
-    website: PropTypes.string,
-    phoneNum: PropTypes.string,
-    email: PropTypes.string,
-  }).isRequired,
-};
+// Location.propTypes = {
+//   location: PropTypes.shape({
+//     Name: PropTypes.string,
+//     address: PropTypes.shape({
+//       city: PropTypes.string,
+//       country: PropTypes.string,
+//       street: PropTypes.string,
+//       zip: PropTypes.string,
+//     }),
+//     coords: PropTypes.shape({
+//       lat: PropTypes.number,
+//       long: PropTypes.number,
+//     }),
+//     ratings: PropTypes.shape({
+//       avg: PropTypes.number,
+//       total: PropTypes.number,
+//     }),
+//     reviews: PropTypes.arrayOf(PropTypes.string),
+//     website: PropTypes.string,
+//     phoneNum: PropTypes.string,
+//     email: PropTypes.string,
+//   }).isRequired,
+// };
 
 export default Location;

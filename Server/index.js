@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 // eslint-disable-next-line no-unused-vars
 const db = require('../Database/index.js');
+require('newrelic');
 
 const Locations = require('../Database/location.js');
 const Restaurants = require('../Database/restaurant.js');

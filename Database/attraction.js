@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
-const { db } = require('./index.js');
+const client = require('./index.js');
+/*const { db } = require('./index.js');
 
-db();
+db();*/
 
 mongoose.Promise = global.Promise;
 
@@ -31,9 +32,29 @@ module.exports = {
   Attractions: attraction,
 
   find: (req, res) => {
+    client.query(`
+      SELECT *
+      FROM attractions
+      LIMIT 3
+    `, (err, result) => {
+      if (err) {
+        res.status(400).send(err);
+      } else {
+        var data = result.rows;
+        data.ratings = {
+          avg: data.averageRating,
+          total: data.totalRatings,
+        };
+        delete data.averageRating;
+        delete data.totalRatings;
+        res.status(200).send(data);
+      }
+    });
+    /*
     attraction.find({}, (err, result) => {
       if (err) { res.status(400).send(err); } else res.status(200).send(result);
     });
+    */
   },
 
   create: (req, res) => {

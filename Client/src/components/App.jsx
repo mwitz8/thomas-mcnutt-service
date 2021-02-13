@@ -35,7 +35,7 @@ class App extends React.Component {
         const { data } = result;
         this.setState({
           location: data,
-        });
+        }, () => {console.log('data: ', data)});
       })
       .catch((err) => { console.log(err); });
   }
