@@ -50,31 +50,31 @@ module.exports = {
         res.status(400).send(err);
       } else {
         var data = result.rows[0];
-        data.ratings = {
-          avg: data.averageRating,
-          total: data.totalRatings,
-        };
-        data.coords = {
-          lat: data.latitude,
-          long: data.longitude
-        }
-        delete data.averageRating;
-        delete data.totalRatings;
-        delete data.latitude;
-        delete data.longitude;
-        client.query(`
-        SELECT *
-        FROM locationReviews
-        LIMIT 3`, (err, result2) => {
-          if (err) {
-            res.status(400).send(err);
-          } else {
-            var reviewsData = result2.rows;
-            data.reviews = [reviewsData[0].review, reviewsData[1].review, reviewsData[2].review];
+        // data.ratings = {
+        //   avg: data.averageRating,
+        //   total: data.totalRatings,
+        // };
+        // data.coords = {
+        //   lat: data.latitude,
+        //   long: data.longitude
+        // }
+        // delete data.averageRating;
+        // delete data.totalRatings;
+        // delete data.latitude;
+        // delete data.longitude;
+        // client.query(`
+        // SELECT *
+        // FROM locationReviews
+        // LIMIT 3`, (err, result2) => {
+        //   if (err) {
+        //     res.status(400).send(err);
+        //   } else {
+        //     var reviewsData = result2.rows;
+        //     data.reviews = [reviewsData[0].review, reviewsData[1].review, reviewsData[2].review];
             res.status(200).send(data);
-          }
-        })
-      }
+          // }
+        }//)
+      //}
     });
     /*
     location.findOne({}, (err, result) => {
